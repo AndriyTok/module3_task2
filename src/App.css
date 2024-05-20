@@ -28,6 +28,52 @@
   color: #61dafb;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+}
+
+.question {
+  margin-bottom: 20px;
+}
+
+.answers {
+  margin-left: 20px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.correct {
+  color: green;
+}
+
+.incorrect {
+  color: red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

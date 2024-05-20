@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import QuestionSelector from './components/QuestionSelector';
+import Test from './components/Test';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+interface Answer {
+  answer: string;
+  isCorrect: boolean;
 }
+
+interface TestQuestion {
+  question: string;
+  answers: Answer[];
+}
+
+const App: React.FC = () => {
+  const [selectedQuestions, setSelectedQuestions] = useState<TestQuestion[] | null>(null);
+
+  const handleQuestionsSelected = (questions: TestQuestion[]) => {
+    setSelectedQuestions(questions);
+  };
+
+  return (
+      <div className="container">
+        {selectedQuestions ? (
+            <Test questions={selectedQuestions} />
+        ) : (
+            <QuestionSelector onQuestionsSelected={handleQuestionsSelected} />
+        )}
+      </div>
+  );
+};
 
 export default App;
