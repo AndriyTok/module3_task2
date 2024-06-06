@@ -12,7 +12,7 @@ export const testData = {
     testName: "Тест по WEB дизайну",
     questions: [
         {
-            question: "Вкажіть тег для блоку?",
+            question: "Вкажіть тег для блоку",
             answers: [
                 { answer: "a", isCorrect: false },
                 { answer: "div", isCorrect: true },
@@ -21,7 +21,7 @@ export const testData = {
             ],
         },
         {
-            question: "Вкажіть тег для гіперпосилання?",
+            question: "Вкажіть тег для гіперпосилання",
             answers: [
                 { answer: "a", isCorrect: true },
                 { answer: "div", isCorrect: false },
@@ -30,7 +30,7 @@ export const testData = {
             ],
         },
         {
-            question: "Який тег використовується для вставки зображення?",
+            question: "Який тег використовується для вставки зображення",
             answers: [
                 { answer: "img", isCorrect: true },
                 { answer: "div", isCorrect: false },
@@ -39,7 +39,7 @@ export const testData = {
             ],
         },
         {
-            question: "Який тег використовується для вставки списку?",
+            question: "Який тег використовується для вставки списку",
             answers: [
                 { answer: "ul", isCorrect: true },
                 { answer: "div", isCorrect: false },
@@ -48,7 +48,7 @@ export const testData = {
             ],
         },
         {
-            question: "Який атрибут HTML використовується для визначення унікального ідентифікатора елемента?",
+            question: "Який атрибут HTML використовується для визначення унікального ідентифікатора елемента",
             answers: [
                 { answer: "id", isCorrect: true },
                 { answer: "class", isCorrect: false },
