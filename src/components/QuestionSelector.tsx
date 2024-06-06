@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { testData } from '../data/testData';
 
 interface Answer {
@@ -17,6 +17,13 @@ interface Props {
 
 const QuestionSelector: React.FC<Props> = ({ onQuestionsSelected }) => {
     const [selectedQuestions, setSelectedQuestions] = useState<TestQuestion[]>([]);
+
+    useEffect(() => {
+        console.log('QuestionSelector component did mount');
+        return () => {
+            console.log('QuestionSelector component will unmount');
+        };
+    }, []);
 
     const handleCheckboxChange = (question: TestQuestion) => {
         setSelectedQuestions(prevSelected =>

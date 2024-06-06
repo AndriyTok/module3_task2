@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 
 interface Answer {
     answer: string;
@@ -23,13 +23,13 @@ const Question: React.FC<Props> = ({ question, onAnswerSubmit }) => {
         setSelectedAnswer(answer);
     };
 
-    const handleSubmit = () => {
+    const handleSubmit = useCallback(() => {
         if (selectedAnswer) {
             const isCorrect = question.answers.find(a => a.answer === selectedAnswer)?.isCorrect || false;
             setSubmitted(true);
             onAnswerSubmit(isCorrect);
         }
-    };
+    }, [selectedAnswer, onAnswerSubmit, question.answers]);
 
     return (
         <div className="question">

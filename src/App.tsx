@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import QuestionSelector from './components/QuestionSelector';
 import Test from './components/Test';
@@ -15,6 +15,15 @@ interface TestQuestion {
 
 const App: React.FC = () => {
   const [selectedQuestions, setSelectedQuestions] = useState<TestQuestion[] | null>(null);
+
+  useEffect(() => {
+    console.log('Component did mount');
+    // Тут ви можете виконувати завантаження початкових даних або інші побічні ефекти
+    return () => {
+      console.log('Component will unmount');
+      // Тут ви можете виконати очищення ресурсів
+    };
+  }, []);
 
   const handleQuestionsSelected = (questions: TestQuestion[]) => {
     setSelectedQuestions(questions);

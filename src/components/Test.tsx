@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Question from './Question';
 
 interface Answer {
@@ -19,12 +19,12 @@ const Test: React.FC<Props> = ({ questions }) => {
     const [score, setScore] = useState(0);
     const [completedQuestions, setCompletedQuestions] = useState(0);
 
-    const handleAnswerSubmit = (isCorrect: boolean) => {
+    const handleAnswerSubmit = useCallback((isCorrect: boolean) => {
         if (isCorrect) {
             setScore(prevScore => prevScore + 1);
         }
         setCompletedQuestions(prevCount => prevCount + 1);
-    };
+    }, []);
 
     return (
         <div>
